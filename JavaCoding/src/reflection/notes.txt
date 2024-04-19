@@ -1,0 +1,20 @@
+# Reflection API
+
+----------- important classes -----------
+java.lang.Class;
+java.lang.reflect.*;
+java.lang.reflect.Field
+java.lang.reflect.Method
+java.lang.reflect.Constructor
+java.lang.reflect.Modifier
+ etc...
+ 
+ -------------- How can we create class Object in java -----------------
+ 
+ 1. Class c = Class.forName("Employee");
+ 2. Employee e = new Employee();
+ 	Class c = e.getClass();
+ 	Note: getClass() method is  coming from Object class.
+3. 	Class c = Employee.class
+	Note: class is static final variable, so whenever it compiled automatically class
+		is added where its representing class Object.

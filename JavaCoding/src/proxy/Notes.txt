@@ -1,0 +1,2 @@
+Proxy means : in place of or in behalf of
+ It is a extra layer before reaching the main service/object

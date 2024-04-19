@@ -1,0 +1,23 @@
+Q. What is lambda ?
+Ans. It is an anonymous function.
+	Its doesn't have name.
+	Its doesn't have modifiers.
+	Its doesn't have any return type. 
+	
+	To use Lambda Expression we need functional Interface.
+	
+Functional Interface: 
+	1. It should contain exactly one abstract method.
+	2. It can contain any number of default and static methods
+	3. It act as an type for Lambda Expression.
+		Interf i = () -> sopln("hello");
+	4.It can be used to invoke Lambda Expression.
+		i.m1();
+	 
+Q. Why Functional Interface contains only one abstract method ?
+Ans.  Functional Interface were introduce to support Lambda Expression in java.
+	 As Functional interface contains only one method hence when we write Lambda Expression
+	 JVM is going to map that single method present in Interface with Lambda Expression and
+	 infer the 'return type','parameter type', but if there are multiple methods present in 
+	 Interface then there will be ambiguty.
+	 		
