@@ -20,7 +20,7 @@ public class WildCard {
 		al2.add(2);
 		al2.add(3);
 
-		String s = (String) al2.get(al2.size() - 1);   
+		String s = (String) al2.get(al2.size() - 1);
 		System.out.println(s);
 	}
 
@@ -38,8 +38,8 @@ public class WildCard {
 
 	}
 
-	public static <T> void m4(T list) {
-
+	public static <T extends Runnable> T m4(T list) {
+		return list;
 	}
 
 }
