@@ -22,8 +22,16 @@ interface interf1 {
 
 }
 
+// interface Interf {
+// @Override
+// // A default method cannot override a method from java.lang.Object
+// default String toString() {
+// return "";
+// }
+// }
+
 /*
- * Interface default methods are by default available to the implementation class, it can directly use it or override it if want its own 
+ * Interface default methods are by default available to the implementation
+ * class, it can directly use it or override it if want its own
  * unique implementation.
- * */
- 
+ */
