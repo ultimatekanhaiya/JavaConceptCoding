@@ -1,59 +1,48 @@
 package streamAPI;
 
-import java.util.Comparator;
-
-public class Student implements Comparable<Student>, Comparator<Student> {
+public class Student implements Comparable<Student> {
 
 	Student() {
 		super();
 	}
 
 	Student(String name, int marks) {
-		this.studentName = name;
-		this.studentMarks = marks;
+		this.name = name;
+		this.marks = marks;
 	}
 
-	private String studentName;
+	private String name;
 
-	private int studentMarks;
+	private int marks;
 
-	public String getStudentName() {
-		return studentName;
+	public String getName() {
+		return name;
 	}
 
-	public void setStudentName(String name) {
-		this.studentName = name;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public int getStudentMarks() {
-		return studentMarks;
+	public int getMarks() {
+		return marks;
 	}
 
-	public void setStudentMarks(int studentMarks) {
-		this.studentMarks = studentMarks;
-	}
-
-	@Override
-	public int compare(Student o1, Student o2) {
-		// sorting in descending order
-		if (o1.studentMarks == o2.studentMarks) {
-			return o2.studentName.compareTo(o1.studentName);
-		}
-		return o2.studentMarks - o1.studentMarks;
+	public void setMarks(int marks) {
+		this.marks = marks;
 	}
 
 	@Override
 	public int compareTo(Student o) {
 		// sorting ascending order
-		if (this.studentMarks == o.studentMarks) {
-			return this.studentName.compareTo(o.studentName);
+		if (this.marks == o.marks) {
+			return this.name.compareTo(o.name);
 		}
-		return this.studentMarks - o.studentMarks;
+		return this.marks - o.marks;
 	}
 
 	@Override
 	public String toString() {
-		return "studentName: " + this.studentName + ", studentMarks: " + this.studentMarks;
+		return "studentName: " + this.name + ", studentMarks: " + this.marks;
 	}
 
 }
