@@ -2,10 +2,13 @@ package streamAPI;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class StreamPower {
     public static void main(String[] args) {
@@ -16,6 +19,10 @@ public class StreamPower {
 
         List<Integer> list = new ArrayList<>();
         list.addAll(Arrays.asList(4, 1, 5, 3, 7, 2, 6));
+
+        int[] numbers = { 5, 9, 11, 2, 8, 21, 1 };
+
+        String[] sarr = { "Java", "Python", "Kotline", "JavaScript", "AngularJs" };
 
         // cube(list);
 
@@ -47,7 +54,13 @@ public class StreamPower {
 
         // findDuplicates(s);
 
-        getFirstNonReaptingCharacter(s);
+        // getFirstNonReaptingCharacter(s);
+
+        // findFirstHighest(numbers);
+
+        // findLongestString(sarr);
+
+        findElementsStartsWith1(numbers);
 
     }
 
@@ -149,6 +162,42 @@ public class StreamPower {
         // Collectors.counting()));
         // second use : stream..filter(c -> map.containsKey(c) && map.get(c) ==
         // 1).limit(1).forEach(System.out::println);
+    }
+
+    // find second highest number in an array
+    public static void findFirstHighest(int[] arr) {
+
+        // NOTE : Stream<Integer> stream != IntStream.of(arr) != Stream<int[]>;
+
+        // NOTE : never use this method to create stream from int[] array.
+        // Stream.of(arr).sorted((o1, o2) -> o2 - o1).skip(1);
+
+        Arrays.stream(arr).boxed().sorted(Comparator.reverseOrder()).limit(2).skip(1).forEach(System.out::println);
+        // or
+        Integer secondHighestNumber = Arrays.stream(arr).boxed().sorted(Comparator.reverseOrder()).skip(1).findFirst()
+                .get();
+        System.out.println(secondHighestNumber);
+    }
+
+    // find longestString in given array
+    public static void findLongestString(String[] arr) {
+        String maxString = Arrays.stream(arr).max((o1, o2) -> o1.length() - o2.length()).get();
+        System.out.println(maxString);
+    }
+
+    // find all elements of array which starts with 1
+    public static void findElementsStartsWith1(int[] arr) {
+        Arrays.stream(arr).boxed().filter(e -> {
+            String s = Integer.toString(e);
+            if (s.startsWith("1"))
+                return true;
+            return false;
+        }).forEach(System.out::println);
+    }
+
+    // skip & limit
+    public static void testSkipLimit() {
+        IntStream.rangeClosed(1, 10).skip(1).limit(8).forEach(System.out::println);
     }
 
     // hepler method to reverse single String word custom
