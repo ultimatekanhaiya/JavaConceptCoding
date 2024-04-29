@@ -56,7 +56,7 @@ public class StreamPower {
 
         // getFirstNonReaptingCharacter(s);
 
-        // findFirstHighest(numbers);
+        // findSecondHighest(numbers);
 
         // findLongestString(sarr);
 
@@ -165,7 +165,7 @@ public class StreamPower {
     }
 
     // find second highest number in an array
-    public static void findFirstHighest(int[] arr) {
+    public static void findSecondHighest(int[] arr) {
 
         // NOTE : Stream<Integer> stream != IntStream.of(arr) != Stream<int[]>;
 
