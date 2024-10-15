@@ -5,6 +5,7 @@ public class InstanceFlowParentToChild {
 	public static void main(String[] args) {
 		
 		Child1 c = new Child1();
+		
 		System.out.println("Main Main");
 	}
 }
@@ -12,6 +13,18 @@ public class InstanceFlowParentToChild {
 class Parent1 {
 
 	int i = 10;
+	int k  = 0;
+	int l = 0;
+	int m = 9;	
+
+	public Parent1(int i, int k, int l, int m, int j) {
+		this.i = i;
+		this.k = k;
+		this.l = l;
+		this.m = m;
+		this.j = j;
+		System.out.println("paremeterized constructor");
+	}
 
 	{
 		m1();
@@ -45,6 +58,7 @@ class Child1 extends Parent1 {
 	}
 
 	Child1() {
+		super();
 		System.out.println("Child Constructor");
 	}
 
